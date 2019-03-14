@@ -1,0 +1,33 @@
+service: test
+package:
+  individually: true
+  exclude:
+  - ./**
+
+provider:
+  name: aws
+  timeout: 300
+  versionFunctions: false
+
+plugins:
+- serverless-protego-plugin
+
+custom:
+  protego:
+    fsp:
+      Enabled: false
+    proact:
+      Enabled: true
+      Features:
+        PermissiveRole:
+          Enabled: false #true/false
+
+
+functions:
+  pythonInput:
+    runtime: python2.7
+    handler: inputs.python_sqs_with_creds.handler.lambda_handler
+    package:
+      include:
+      - ../../inputs/python_sqs_with_creds/**
+    # no need for Role since the PermissiveRole is Disabled

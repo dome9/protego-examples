@@ -1,0 +1,137 @@
+## Protego.yml template
+
+# Account Level information This Information can be also supplied as command line arguments.
+Account:
+  # (String) can be found in the protego account ui.
+  ProtegoAccountId: <ProtegoAccountId>
+  # (String) can be found in the protego account ui.
+  ProtegoAccessToken: <ProtegoAccessToken>
+  # (boolean) an Indications to the tool whether to store the job results. The stored results can be viewed in the protego ui.
+  StoreJobReport:  <true/false>
+  # (dictionary) keys and values that will be attached to the job results. can store information on the build environment.
+  Tags:
+    SomeKey: SomeValue
+  # (String) The AWS region to be used.
+  Region: us-east-1
+
+# Global Configuration that will be applied for all the functions in that job scan. A function can override this configuration.
+Globals:
+  # (String) (Default: None) The Default fail threshold for all the features. A feature can override that threshold.
+  # The fail threshold will indicate what is the minimum level of issues that if found, will fail the build.
+  # Can be one of : None/Low/Medium/High/Critical (default: None)
+  # None:     (default) Never fail the build, All issues found will be marked as warnings.
+  # Critical: Will fail the build only if Critical issues are observed.
+  # High:     Will fail the build only if High (or above) issues are observed.
+  # Medium:   Will fail the build only if Medium (or above) issues are observed.
+  # Low:      Will fail the build only if Low (or above) issues are observed.
+  DefaultFailThreshold: None
+  # (boolean) (Default: false) Indicates Protego PermissiveRole feature if we want to check the current function role or to generate a suggested role for the function.
+  # false: Protego will check the current function role and alert if the role has redundant permissions. (in that mode the function have the current Role configuration)
+  # true: Protego will generate a suggested role for the function
+  ProtegoGeneratedRole: true
+
+  # The scanner features block, contains feature level configuration.
+  ControlPoints:
+    # This feature will scan the function code and configuration, generates a role and verify that the current function role has no redundant permissions.
+    PermissiveRole:
+      # (boolean) (Default: true) Indicates whether this feature should be scanned or skipped.
+      Enabled: true
+      # (String) (Default: None) The feature FailThreshold indicates what is the minimum level of issues that if found, will fail the build.
+      # Can be one of : None/Low/Medium/High/Critical (default: None)
+      # see Global:DefaultFailThreshold for more details
+      FailThreshold: None
+    # This feature will scan the function code and alert if hard coded credentials are found in the code.
+    CredentialsUsage:
+      Enabled: true
+      FailThreshold: None
+    # This feature will scan the function dependencies and lookup protego vulnerability DB for any known vulnerable dependency.
+    VulnerableDependency:
+      Enabled: true
+      FailThreshold: None
+
+# integrations section, will detail the integrations used to extract the functions information.
+Integrations:
+  # Supported integrations : Cloudformation, Sam (Serverless integration will be part of the stack serverless.yml file)
+  # only one integration can be specified.
+  Cloudformation:
+    # (String) the relative path to the cloudformation template file. (can be yaml OR json)
+    Template: template_dir/cf.json
+    # (dictionary) keys and values parameters that are needed in order to evaluate the given template..
+    Parameters:
+      ParamName: ParamValue
+
+  # only one integration can be specified.
+  Sam:
+    # (String) the relative path to the sam template file. (can be yaml OR json)
+    Template: template_dir/template.yaml
+    # (dictionary) keys and values parameters that are needed in order to evaluate the given template..
+    Parameters:
+      ParamName: ParamValue
+
+# Functions section, will be used to detail the functions list.
+# For sam and serverless integrations the functions list can be taken from the template file.
+Functions:
+  # The function logical Name.
+  pythonInput:
+    # Each function section will be used to detail :
+    # 1: the function needed properties or any properties that we want to override from the integration template.
+    # 2: the function configuration overrides for the Global section.
+
+    # (String) The function friendly name.
+    # will be the name you will see in protego reports (locally and remote)
+    FriendlyName: myFunctionFriendlyName
+
+    # (String) The runtime environment for the Lambda function. (python2.7, nodejs8.10, java8 ...)
+    Runtime : python2.7
+    # (String) The handler file.function that is called to begin executing your function.
+    Handler: handler.lambda_handler
+    # (String) the relative path to the functions code.
+    # Can be a directory or a zip file
+    # Must be located in the file system tree that is below the current working directory
+    CodeLocation: inputs/python_s3_create_bucket
+    # (List) A list of event source mappings source ARNs.
+    EventSourceMappings:
+      # The Amazon Resource Name (ARN) of the event source.
+      - EventSourceArn: arn:aws:kinesis:us-east-1:123456789012:stream/RecipientStream
+      - EventSourceArn: arn:aws:dynamodb:us-east-1:123456789012:table/myTable/stream/2017-11
+    # (dictionary) The function's dead letter queue configuration
+    DeadLetterConfig:
+      # (String) The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+      TargetArn: arn:aws:sns:us-east-1:373507998356:func_name
+    # (dictionary) The function's AWS X-Ray tracing configuration.
+    TracingConfig:
+      # (String) The tracing mode.
+      Mode: Active
+    # (String) The function's execution role ARN.
+    Role: arn:aws:iam::123456789012:role/myRole
+    # A Role can be also a detailed AWS iam Statements list:
+    # Role:
+    #   Statement:
+    #     - Action:
+    #         - s3:*
+    #       Effect: Allow
+    #       Resource:
+    #         - "*"
+    #   Version: '2012-10-17'
+
+    # (dictionary) The function's environment variables.
+    Environment:
+      # (dictionary) Environment variable key-value pairs.
+      Variables:
+        MyKey: MyVal
+        MyKey2: MyVal2
+    # (dictionary) The function's networking configuration.
+    VpcConfig:
+      # (List) A list of VPC subnet IDs.
+      SubnetIds:
+        - subnetA
+        - subnetB
+        -
+    # Any Globals overrides for details see the Globals section.
+    # For example:
+    Enabled: true
+    ControlPoints:
+      VulnerableDependency:
+        Enabled: false
+
+

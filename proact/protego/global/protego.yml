@@ -1,0 +1,21 @@
+Account:
+  Tags:
+    BuildEnv: protegoExample
+
+# this configuration will be applied to all the functions
+Globals:
+  ControlPoints:
+    PermissiveRole:
+      Enabled: false
+
+Functions:
+  nodeInput:
+    Runtime: nodejs6.10
+    Handler: index.handler
+    CodeLocation: inputs/node_s3_create_bucket
+
+  pythonInput:
+    Runtime : python2.7
+    Handler: handler.lambda_handler
+    CodeLocation: inputs/python_sqs_send
+

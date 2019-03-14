@@ -1,0 +1,17 @@
+#
+# Protego git ignore
+#
+.idea/
+.pytest_cache/
+.serverless
+*.pem
+*.pyc
+*.venv
+*.vscode
+*backup*
+protego_output
+dist/
+build
+.serverless
+node_modules
+protego-config.json

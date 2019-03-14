@@ -1,0 +1,14 @@
+Integrations:
+  Cloudformation:
+    Template: cloudformation/global/cf.yaml
+
+Globals:
+  # Override that value for all functions
+  ProtegoGeneratedRole: true
+  ControlPoints:
+    VulnerableDependency:
+      Enabled: false
+
+Functions:
+  NewCustomerLambdaFunction:
+    CodeLocation: inputs/python_new_file_handler

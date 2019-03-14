@@ -1,0 +1,7 @@
+Integrations:
+  Cloudformation:
+    Template: cloudformation/basic/cf.json
+
+Functions:
+  NewCustomerLambdaFunction:
+    CodeLocation: inputs/python_new_file_handler

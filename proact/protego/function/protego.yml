@@ -1,0 +1,22 @@
+Functions:
+  nodeInput:
+    Runtime: nodejs6.10
+    Handler: handler.lambda_handler
+    CodeLocation: inputs/node_s3_create_bucket
+    Role:
+      Statement:
+        - Action:
+            - s3:*
+          Effect: Allow
+          Resource:
+            - "*"
+      Version: '2012-10-17'
+    # only this function overrides the global configuration
+    ControlPoints:
+      PermissiveRole:
+        FailThreshold: Critical
+
+  # This function will be skipped
+  pythonInput:
+    Enabled: false
+

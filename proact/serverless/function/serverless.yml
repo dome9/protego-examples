@@ -1,0 +1,91 @@
+service: test
+package:
+  individually: true
+  exclude:
+  - ./**
+
+provider:
+  name: aws
+  timeout: 300
+  versionFunctions: false
+
+plugins:
+- serverless-protego-plugin
+
+custom:
+  protego:
+    fsp:
+      Enabled: false
+    proact:
+      Enabled: true
+
+functions:
+  nodeInput:
+    runtime: nodejs6.10
+    handler: inputs.node_s3_create_bucket.index.handler
+    package:
+      include:
+      - ../../inputs/node_s3_create_bucket/**
+    role: MyRole
+    # overrides the global configurations - skip the PermissiveRole feature
+    protego:
+      proact:
+        Features:
+          PermissiveRole:
+            Enabled: false
+
+  pythonInput:
+    runtime: python2.7
+    handler: inputs.python_sqs_with_creds.handler.lambda_handler
+    package:
+      include:
+        - ../../inputs/python_sqs_with_creds/**
+    # overrides the global configurations - this function will be skipped
+    protego:
+      proact:
+        Enabled: false
+
+  javaS3Input:
+    runtime: java8
+    handler: io.protego.sqs_service.Handler
+    package:
+      artifact: ../../inputs/java_s3_service/s3_service-0.0.1.jar
+    role: MyRole
+
+resources:
+  Resources:
+    MyRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: MyRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: MyRolePolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
+                    - logs:PutLogEvents
+                  Resource: "*"
+                - Effect: Allow
+                  Action:
+                    - s3:CreateBucket
+                    - s3:PutObject
+                    - s3:ListAllMyBuckets
+                  Resource: "*"
+                - Effect: Allow
+                  Action:
+                    - sqs:SendMessage
+                    - sqs:ListQueues
+                  Resource: "*"
+

@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'description'
+Metadata:
+  Version: 1
+
+Resources:
+  NewCustomerLambdaFunction:
+      Type: "AWS::Lambda::Function"
+      Properties:
+        Handler: "python_new_file_handler.lambda_handler"
+        FunctionName: MyFunctionName
+        Code:
+          S3Bucket: "lambda-functions"
+          S3Key: "amilookup.zip"
+        Runtime: "python2.7"
+        Timeout: 25
+        TracingConfig:
+          Mode: "Active"
+        Role:
+          Fn::GetAtt:
+          - MyRole
+          - Arn
+
+  nodeLambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Runtime: nodejs8.10
+        Handler: index.handler
+        FunctionName: MyFunctionName
+        Timeout: 25
+        Role:
+          Fn::GetAtt:
+          - MyRole
+          - Arn
+
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: MyRoleName
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Policies:
+      - PolicyName: MyPolicyName
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:CreateBucket
+            - s3:DeleteBucket
+            Resource:
+              - "*"

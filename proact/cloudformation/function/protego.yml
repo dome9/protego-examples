@@ -1,0 +1,17 @@
+Account:
+  Tags:
+    BuildEnv: protegoCloudformationExamles
+
+Integrations:
+  Cloudformation:
+    Template: cloudformation/function/cf.yaml
+
+
+Functions:
+  NewCustomerLambdaFunction:
+    CodeLocation: inputs/python_new_file_handler
+    # Only this function will override that value
+    ProtegoGeneratedRole: true
+
+  nodeLambdaFunction:
+    CodeLocation: inputs/node_s3_create_bucket

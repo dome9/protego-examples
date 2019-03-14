@@ -1,0 +1,10 @@
+Integrations:
+  Cloudformation:
+    Template: cloudformation/parameters/cf.json
+    # Parameters that are needed in order to evaluate the cloudformation template
+    Parameters:
+      LambdaHandler: python_new_file_handler.lambda_handler
+
+Functions:
+  NewCustomerLambdaFunction:
+    CodeLocation: inputs/python_new_file_handler

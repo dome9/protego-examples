@@ -1,0 +1,7 @@
+Integrations:
+  Sam:
+    Template: sam/with_protego/function/template.yaml
+
+Functions:
+  PutFunction:
+    ProtegoGeneratedRole: true
