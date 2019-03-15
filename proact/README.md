@@ -3,7 +3,8 @@
 ## Setup
 
 #### cli tool plugin installation: 
-`npm install -g https://artifactory.app.protego.io/protego-serverless-plugin.tgz` . ( Note that plugin version might chnage , the most up-to-date version is listed at your protego portal under integrations / CI-CD Integration and Deployment tab. )  
+`npm install -g https://artifactory.app.protego.io/protego-serverless-plugin.tgz` . 
+( Note that plugin version might chnage , the most up-to-date version is listed at your protego portal under integrations / CI-CD Integration and Deployment tab. )  
 
 
 #### Token
