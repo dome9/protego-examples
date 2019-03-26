@@ -9,6 +9,7 @@ sns_client = boto3.client('sns')
 CUSTOMERS_TABLE_NAME = os.getenv('CUSTOMERS_TABLE', "functions_table")
 SNS_TOPIC_ARN_FUNCTION_MODIFIED = os.getenv('SNS_TOPIC_ARN_FUNCTION_MODIFIED', None)
 
+with_sns_msg = True
 
 def notify_new_customer(key):
     message = {
@@ -28,8 +29,8 @@ def lambda_handler(event, context):
         logging.debug("Got a new customer file")
 
         dynamodb_client.put_item(TableName=CUSTOMERS_TABLE_NAME, Item={"key": key})
-
-        notify_new_customer(key)
+        if with_sns_msg:
+            notify_new_customer(key)
     return event
 
 
