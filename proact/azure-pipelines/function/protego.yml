@@ -1,6 +1,6 @@
 Integrations:
-  Azure:
-    Pipeline: azure/function/azure-pipelines.yml
+  AzurePipelines:
+    Pipeline: azure-pipelines/function/azure-pipelines.yml
 Functions:
   TestAzurePipelines:
     Handler: index.handler

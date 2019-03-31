@@ -1,3 +1,0 @@
-Integrations:
-  Azure:
-    Pipeline: azure/basic/azure-pipelines.yml

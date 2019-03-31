@@ -69,7 +69,7 @@ Integrations:
       ParamName: ParamValue
 
   # only one integration can be specified.
-  Azure:
+  AzurePipelines:
     # (String) the relative path to the azure pipeline file. (can be yaml OR json)
     Pipeline: pipeline_dir/pipeline.yml
 

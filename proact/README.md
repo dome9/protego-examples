@@ -144,22 +144,22 @@ protego proact -m sam/sam_only/function/template.yaml
 ```
 
 ## Azure pipelines
-we will use azure pileline yaml file to extract the functions properties.
+We will use azure pipelines yaml file to extract the functions properties.
 
 Protego tool will parse only the `LambdaDeployFunction` tasks from the pipeline file.
-in addition `protego.yml` will point to the Azure pipeline file.
+in addition `protego.yml` will point to the Azure pipelines file.
 
-#### [basic](./azure/basic/protego.yml) :
+#### [basic](./azure-pipelines/basic/protego.yml) :
 Note: To properly run this example change the role ARN in `azure-pipelines.yml` to a real role ARN.
 ```
-protego proact -i azure/basic/protego.yml
+protego proact -i azure-pipelines/basic/protego.yml
 ```
 
-#### [function](./azure/function/protego.yml) :
+#### [function](./azure-pipelines/function/protego.yml) :
 With additional functions and function properties override:
 
 ```
-protego proact -i azure/function/protego.yml
+protego proact -i azure-pipelines/function/protego.yml
 ```
 
 ## Protego.yml [Template](./protego/template/protego.yml)
