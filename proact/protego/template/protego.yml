@@ -68,6 +68,11 @@ Integrations:
     Parameters:
       ParamName: ParamValue
 
+  # only one integration can be specified.
+  Azure:
+    # (String) the relative path to the azure pipeline file. (can be yaml OR json)
+    Pipeline: pipeline_dir/pipeline.yml
+
 # Functions section, will be used to detail the functions list.
 # For sam and serverless integrations the functions list can be taken from the template file.
 Functions:

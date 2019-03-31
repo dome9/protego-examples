@@ -1,0 +1,18 @@
+pool:
+  name: Hosted VS2017
+steps:
+- task: AmazonWebServices.aws-vsts-tools.LambdaDeployFunction.LambdaDeployFunction@1
+  displayName: 'Deploy Lambda Function: TestAzurePipelines'
+  inputs:
+    awsCredentials: MyCred
+    regionName: 'us-east-1'
+    deploymentMode: codeandconfiguration
+    functionName: TestAzurePipelines
+    functionHandler: 'main.lambda_handler'
+    runtime: nodejs6.10
+    roleARN: 'arn:aws:iam::123456789012:role/myRole'
+    deadLetterARN: 'arn:aws:sns:us-east-1:123456789012:myTopic'
+    environment: 'key1=Value1'
+    codeLocation: s3object
+    s3Bucket: mybucket
+    s3ObjectKey: mykey
