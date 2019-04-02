@@ -31,36 +31,30 @@ This tool require also the Protego Account ID & Protego Token (you can find prot
 
 ### e.g
 
-`Protego:
+```
+Protego:
  Account:
   ProtegoAccountId: Add your protego account id here
-  ProtegoAccessToken: Add your protego access token here`
+  ProtegoAccessToken: `Add your protego access token here
+  ```
 
 
 
 ## Usage: protego fspSam [options]
 
 ### Options:
-
-  `-i, --input [path]                  path to SAM template input file (default:template.yaml)`
-  
-  `-a, --aws-account-id <id>           AWS Account ID`
-  
-  `-R, --region <region>               AWS Region`
-  
-  `-p, --protego-account-id <id>       Protego Account ID`
-  
-  `-t, --protego-access-token <token>  Protego Token`
-  
-  `-o, --output [path]                 (optional) path to instrumented template file (default: current working directory)`
-  
-  `-f, --fsp-version <version>         (optional) FSP Version (default: latest)`
-  
-  `-q, --quiet                         (optional) quiet mode: output only the json output`
-  
-  `-v, --verbose                       (optional) verbose debug logs`
-  
-  `-h, --help                          output usage information`
+ ```
+  -i, --input [path]                  path to SAM template input file (default:template.yaml)
+  -a, --aws-account-id <id>           AWS Account ID
+  -R, --region <region>               AWS Region
+  -p, --protego-account-id <id>       Protego Account ID
+  -t, --protego-access-token <token>  Protego Token
+  -o, --output [path]                 (optional) path to instrumented template file (default: current working directory)
+  -f, --fsp-version <version>         (optional) FSP Version (default: latest)
+  -q, --quiet                         (optional) quiet mode: output only the json output
+  -v, --verbose                       (optional) verbose debug logs
+  -h, --help                          output usage information
+  ```
 
 ## Example:
 
