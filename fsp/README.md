@@ -23,11 +23,19 @@ FSP is able to dynamically inspect various points within the flow of functions u
 
 ## $ protego fspSam (command line)
 
-This command instrument a given lambda which was created using AWS SAM Framework. It take SAM template.yaml as and input, and output a new template file, ready to be uploaded to AWS account.
+This command instruments a given lambda which was created using AWS SAM Framework. It takes SAM template.yaml as an input, and generates a new template file, ready to be uploaded to AWS account.
 
-The input is the location of the template file, the aws-account-id and the region.
+### Following are the input arguments:
+```
+SAM template file location
+aws-account-id
+region
+Protego Account ID
+Protego Token
+```
 
-This tool require also the Protego Account ID & Protego Token (you can find protego Account ID & Protego Token in Protego's account integration page ). You can add this configuration via options or you can add Protego section in your SAM template.yaml file
+### Note:
+Protego Account ID & Protego Token can be found from integration page in Protego web UI. You can add this configuration via options or you can add Protego section in your SAM template.yaml file
 
 ### e.g
 
