@@ -131,7 +131,17 @@ Functions:
       SubnetIds:
         - subnetA
         - subnetB
-        -
+    # (List) The Layers list that are used by that function.
+    # every layer can be identified by a layer Arn or a layer Name
+    Layers:
+      # (String) A LayerName that defined as a Local layer
+      - LayerName
+      # (String) A layer Arn, can be defined locally (by name) or remotely
+      - arn:aws:lambda:us-east-1:123456789012:layer:layer-name:1
+      # (dictionary) Another option is to pass the layer Name or Arn as a dictionary
+      - Name: LayerName
+        Arn: LayerArn
+
     # Any Globals overrides for details see the Globals section.
     # For example:
     Enabled: true
@@ -139,4 +149,12 @@ Functions:
       VulnerableDependency:
         Enabled: false
 
+# Local layers section
+Layers:
+  # the name of the local layer
+  LayerName:
+    # (String) the relative path to the layer code.
+    # Can be a directory or a zip file
+    # Must be located in the file system tree that is below the current working directory
+    CodeLocation: inputs/myLayer
 

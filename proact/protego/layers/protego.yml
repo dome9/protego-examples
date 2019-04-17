@@ -1,0 +1,19 @@
+Functions:
+  nodeWithLayers:
+    Runtime : nodejs8.10
+    Handler: index.handler
+    CodeLocation: inputs/node-agent-with-layer
+    Role:
+      Statement:
+        - Action:
+            - s3:*
+          Effect: Allow
+          Resource:
+            - "*"
+      Version: '2012-10-17'
+    Layers:
+      - myNodeLayer
+
+Layers:
+  myNodeLayer:
+    CodeLocation: inputs/myNodeLayer

@@ -13,5 +13,5 @@ protego_output
 dist/
 build
 .serverless
-node_modules
 protego-config.json
+.DS_Store

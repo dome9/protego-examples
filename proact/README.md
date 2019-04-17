@@ -34,6 +34,13 @@ With function skip and per function features override:
 protego proact -i protego/function/protego.yml
 ```
 
+#### [layers](./protego/layers/protego.yml) :
+A function with local defined layers:
+
+```
+protego proact -i protego/layers/protego.yml
+```
+
 ## serverless
 
 First we need to install the protego plugin
@@ -121,6 +128,11 @@ With Sam template parameters:
 With functions list and function properties override:
 
 ```protego proact -i sam/with_protego/function/protego.yml```
+
+#### [layers](./sam/with_protego/layers/protego.yml) :
+A function with local and remote layers:
+
+```protego proact -i sam/with_protego/layers/protego.yml```
 
 ### Sam Only 
 

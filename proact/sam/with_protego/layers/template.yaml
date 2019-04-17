@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'sam-app
+
+  Sample SAM Template for sam-app
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  HelloWorldFunction:
+    Properties:
+      Runtime: nodejs8.10
+      Handler: index.handler
+      CodeUri: inputs/node-agent-with-layer
+      Role: !GetAtt MyRole.Arn
+      Layers:
+        - arn:aws:lambda:us-west-2:111111111111:layer:myNodeLayer:1
+        - !Ref AnotherNodeLayer
+    Type: AWS::Serverless::Function
+
+  AnotherNodeLayer:
+      Type: AWS::Serverless::LayerVersion
+      Properties:
+          LayerName: anotherNodeLayer
+          ContentUri: inputs/anotherNodeLayer
+          CompatibleRuntimes:
+            - nodejs6.10
+            - nodejs8.10
+          LicenseInfo: 'MIT'
+          RetentionPolicy: Retain
+
+  MyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: MyPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:*
+                  - s3:*
+                Resource: "*"
+
+Transform: AWS::Serverless-2016-10-31

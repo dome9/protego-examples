@@ -1,0 +1,7 @@
+Integrations:
+  Sam:
+    Template: sam/with_protego/layers/template.yaml
+
+Layers:
+  myNodeLayer:
+    CodeLocation: inputs/myNodeLayer
