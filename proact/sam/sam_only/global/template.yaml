@@ -45,10 +45,11 @@ Resources:
     Type: AWS::Serverless::Function
 Transform: AWS::Serverless-2016-10-31
 
-Protego:
-  Account:
-    Tags:
-      BuildEnv: SamOnlyGlobalExample
+Metadata:
+  Protego:
+    Account:
+      Tags:
+        BuildEnv: SamOnlyGlobalExample
 
-  Globals:
-    DefaultFailThreshold: Low
+    Globals:
+      DefaultFailThreshold: Low

@@ -13,9 +13,10 @@ Resources:
           Type: AlexaSkill
 
 
-Protego:
-  Functions:
-    AlexaSkillFunction:
-      ControlPoints:
-        PermissiveRole:
-          Enabled: false
+Metadata:
+  Protego:
+    Functions:
+      AlexaSkillFunction:
+        ControlPoints:
+          PermissiveRole:
+            Enabled: false

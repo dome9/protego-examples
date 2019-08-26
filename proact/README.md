@@ -75,8 +75,12 @@ sls package
 ## cloudformation
 we will use Cloudformation template to extract the functions properties.
 
-The one thing that we **must** get from `protego.yml` is the `CodeLocation` for each function.
-in addition `protego.yml` will point to the Cloudformation template file.
+In order to scan the functions code the tool will look for the `CodeLocation` property that points to the local path to the function code.
+If the `CodeLocation` key is missing the tool will try to download the code from s3 location.
+
+
+### With protego.yml
+The `protego.yml` will point to the Cloudformation template file.
 
 #### [basic](./cloudformation/basic/protego.yml) :
 ```
@@ -103,6 +107,27 @@ With function properties override and job tags:
 ```
 protego proact -i cloudformation/function/protego.yml
 ```
+
+### Cloudformation template Only 
+
+In this case we will add a `Protego` section to the cloudformation template, under the `Metadata` block. 
+This section can contain all the information as in a `protego.yml` file.
+
+#### [global](./cloudformation/cloudformation_only/global/template.yaml) :
+Note: To properly run this example change the bucket name and key to a real s3 location.
+with features override in the cloudformation template:
+
+```
+protego proact -C cloudformation/cloudformation_only/global/template.yaml
+```
+
+#### [function](./cloudformation/cloudformation_only/function/cf.json) :
+with function properties override in the cloudformation template:
+
+```
+protego proact -C cloudformation/cloudformation_only/function/cf.json
+```
+
 
 ## sam
 we will use Sam template to extract the functions and each function properties.
@@ -135,8 +160,6 @@ A function with local and remote layers:
 ```protego proact -i sam/with_protego/layers/protego.yml```
 
 ### Sam Only 
-
-*[This mode is not published yet]*
 
 In this case we will add a `Protego` section to the sam template. 
 This section can contain all the sections and information as in a `protego.yml` file.
