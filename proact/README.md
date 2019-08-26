@@ -9,8 +9,19 @@
 
 
 #### Token
-In order to run the examples You will need to create a `protego-config.json` file with the protego.
-you can just login to the ui and grab the config file from there.
+In order to run the examples You will need to create a `protego-config.json` file with the protego details in it.
+you can just login to the protego ui and grab the config file from the integrations page.
+
+#### Integrations
+Protego proact tool supports the following integrations:
+
+* [protego.yml](#protego-yml)
+* [serverless](#serverless)
+* [cloudformation](#cloudformation)
+* [sam](#sam)
+* [Azure pipelines](#azure-pipelines)
+
+A full documentation of `protego.yml` can be found [here](#protego-yml-template).
 
 
 ## protego.yml
