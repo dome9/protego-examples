@@ -15,13 +15,13 @@ you can just login to the protego ui and grab the config file from the integrati
 #### Integrations
 Protego proact tool supports the following integrations:
 
-* [protego.yml](#protego-yml)
+* [protego.yml](#protegoyml)
 * [serverless](#serverless)
 * [cloudformation](#cloudformation)
 * [sam](#sam)
 * [Azure pipelines](#azure-pipelines)
 
-A full documentation of `protego.yml` can be found [here](#protego-yml-template).
+A full documentation of `protego.yml` can be found [here](#protegoyml-template).
 
 
 ## protego.yml
