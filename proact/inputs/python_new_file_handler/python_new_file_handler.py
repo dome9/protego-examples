@@ -3,11 +3,11 @@ import logging
 import os
 import json
 
-dynamodb_client = boto3.client('dynamodb')
-sns_client = boto3.client('sns')
+dynamodb_client = boto3.client('dynamodb', region_name="us-east-1")
+sns_client = boto3.client('sns', region_name="us-east-1")
 
 CUSTOMERS_TABLE_NAME = os.getenv('CUSTOMERS_TABLE', "functions_table")
-SNS_TOPIC_ARN_FUNCTION_MODIFIED = os.getenv('SNS_TOPIC_ARN_FUNCTION_MODIFIED', None)
+SNS_TOPIC_ARN_FUNCTION_MODIFIED = "function_modified"
 
 with_sns_msg = True
 
