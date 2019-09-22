@@ -5,7 +5,7 @@ Integrations:
 Globals:
   # Override that value for all functions
   ProtegoGeneratedRole: true
-  ControlPoints:
+  Features:
     VulnerableDependency:
       Enabled: false
 

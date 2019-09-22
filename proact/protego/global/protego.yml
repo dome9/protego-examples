@@ -4,7 +4,7 @@ Account:
 
 # this configuration will be applied to all the functions
 Globals:
-  ControlPoints:
+  Features:
     PermissiveRole:
       Enabled: false
 

@@ -31,7 +31,7 @@ Globals:
   ProtegoGeneratedRole: true
 
   # The scanner features block, contains feature level configuration.
-  ControlPoints:
+  Features:
     # This feature will scan the function code and configuration, generates a role and verify that the current function role has no redundant permissions.
     PermissiveRole:
       # (boolean) (Default: true) Indicates whether this feature should be scanned or skipped.
@@ -145,7 +145,7 @@ Functions:
     # Any Globals overrides for details see the Globals section.
     # For example:
     Enabled: true
-    ControlPoints:
+    Features:
       VulnerableDependency:
         Enabled: false
 

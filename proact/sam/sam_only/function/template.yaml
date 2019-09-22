@@ -17,6 +17,6 @@ Metadata:
   Protego:
     Functions:
       AlexaSkillFunction:
-        ControlPoints:
+        Features:
           PermissiveRole:
             Enabled: false

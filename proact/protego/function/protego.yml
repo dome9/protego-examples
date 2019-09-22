@@ -1,7 +1,7 @@
 Functions:
   nodeInput:
     Runtime: nodejs6.10
-    Handler: handler.lambda_handler
+    Handler: index.handler
     CodeLocation: inputs/node_s3_create_bucket
     Role:
       Statement:
@@ -12,7 +12,7 @@ Functions:
             - "*"
       Version: '2012-10-17'
     # only this function overrides the global configuration
-    ControlPoints:
+    Features:
       PermissiveRole:
         FailThreshold: Critical
 

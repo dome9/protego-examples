@@ -124,7 +124,7 @@ protego proact -i cloudformation/function/protego.yml
 In this case we will add a `Protego` section to the cloudformation template, under the `Metadata` block. 
 This section can contain all the information as in a `protego.yml` file.
 
-#### [global](./cloudformation/cloudformation_only/global/template.yaml) :
+#### [global](./cloudformation/cloudformation_only/global/cf.json) :
 Note: To properly run this example change the bucket name and key to a real s3 location.
 with features override in the cloudformation template:
 
