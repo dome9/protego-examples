@@ -2,10 +2,6 @@
 
 # Account Level information This Information can be also supplied as command line arguments.
 Account:
-  # (String) can be found in the protego account ui.
-  ProtegoAccountId: <ProtegoAccountId>
-  # (String) can be found in the protego account ui.
-  ProtegoAccessToken: <ProtegoAccessToken>
   # (boolean) an Indications to the tool whether to store the job results. The stored results can be viewed in the protego ui.
   StoreJobReport:  <true/false>
   # (dictionary) keys and values that will be attached to the job results. can store information on the build environment.
