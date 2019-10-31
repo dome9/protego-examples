@@ -1,6 +1,6 @@
 Integrations:
   Cloudformation:
-    Template: cloudformation/global/cf.yaml
+    Template: ./cf.yaml
 
 Globals:
   # Override that value for all functions
@@ -11,4 +11,4 @@ Globals:
 
 Functions:
   NewCustomerLambdaFunction:
-    CodeLocation: inputs/python_new_file_handler
+    CodeLocation: ../../inputs/python_new_file_handler

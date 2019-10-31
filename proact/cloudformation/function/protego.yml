@@ -4,14 +4,14 @@ Account:
 
 Integrations:
   Cloudformation:
-    Template: cloudformation/function/cf.yaml
+    Template: ./cf.yaml
 
 
 Functions:
   NewCustomerLambdaFunction:
-    CodeLocation: inputs/python_new_file_handler
+    CodeLocation: ../../inputs/python_new_file_handler
     # Only this function will override that value
     ProtegoGeneratedRole: true
 
   nodeLambdaFunction:
-    CodeLocation: inputs/node_s3_create_bucket
+    CodeLocation: ../../inputs/node_s3_create_bucket

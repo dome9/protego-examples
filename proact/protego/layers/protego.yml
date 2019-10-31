@@ -2,7 +2,7 @@ Functions:
   nodeWithLayers:
     Runtime : nodejs8.10
     Handler: index.handler
-    CodeLocation: inputs/node-agent-with-layer
+    CodeLocation: ../../inputs/node-agent-with-layer
     Role:
       Statement:
         - Action:
@@ -16,4 +16,4 @@ Functions:
 
 Layers:
   myNodeLayer:
-    CodeLocation: inputs/myNodeLayer
+    CodeLocation: ../../inputs/myNodeLayer

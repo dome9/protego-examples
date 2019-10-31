@@ -2,7 +2,7 @@ Functions:
   nodeInput:
     Runtime: nodejs6.10
     Handler: index.handler
-    CodeLocation: inputs/node_s3_create_bucket
+    CodeLocation: ../../inputs/node_s3_create_bucket
     Role:
       Statement:
         - Action:
