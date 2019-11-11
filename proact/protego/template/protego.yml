@@ -44,6 +44,10 @@ Globals:
     VulnerableDependency:
       Enabled: true
       FailThreshold: None
+    # This feature will scan for any action (Like aws api call) that is not compliant with one or more compliance rules.
+    RuleViolation:
+      Enabled: true
+      FailThreshold: None
 
 # integrations section, will detail the integrations used to extract the functions information.
 Integrations:

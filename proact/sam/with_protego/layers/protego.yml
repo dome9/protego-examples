@@ -1,7 +1,12 @@
 Integrations:
   Sam:
     Template: sam/with_protego/layers/template.yaml
+    Parameters:
+      ProjName: myproj
+      Env: myenv
 
 Layers:
   myNodeLayer:
+    CodeLocation: inputs/myNodeLayer
+  AnotherNodeLayer:
     CodeLocation: inputs/myNodeLayer

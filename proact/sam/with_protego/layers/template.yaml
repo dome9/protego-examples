@@ -7,6 +7,12 @@ Description: 'sam-app
 Globals:
   Function:
     Timeout: 3
+Parameters:
+  ProjName:
+    Type: String
+  Env:
+    Type: String
+
 Resources:
   HelloWorldFunction:
     Properties:
@@ -22,8 +28,12 @@ Resources:
   AnotherNodeLayer:
       Type: AWS::Serverless::LayerVersion
       Properties:
-          LayerName: anotherNodeLayer
-          ContentUri: inputs/anotherNodeLayer
+          LayerName: !Join [ "-", [ !Ref ProjName, !Ref Env, "lambdaLayer" ] ]
+          ContentUri:
+            Bucket: !Ref BucketName
+            Key: !Ref BucketKey
+
+#          ContentUri: inputs/anotherNodeLayer
           CompatibleRuntimes:
             - nodejs6.10
             - nodejs8.10

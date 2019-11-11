@@ -22,7 +22,7 @@ custom:
 functions:
   nodeInput:
     runtime: nodejs8.10
-    handler: inputs.node_s3_create_bucket.index.handler
+    handler: inputs/node_s3_create_bucket/index.handler
     package:
       include:
       - ../../inputs/node_s3_create_bucket/**
@@ -36,7 +36,7 @@ functions:
 
   pythonInput:
     runtime: python2.7
-    handler: inputs.python_sqs_with_creds.handler.lambda_handler
+    handler: inputs/python_sqs_with_creds/handler.lambda_handler
     package:
       include:
         - ../../inputs/python_sqs_with_creds/**

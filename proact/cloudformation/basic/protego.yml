@@ -4,4 +4,4 @@ Integrations:
 
 Functions:
   NewCustomerLambdaFunction:
-    CodeLocation: .
+    CodeLocation: inputs/python_new_file_handler

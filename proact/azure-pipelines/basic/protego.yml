@@ -1,3 +1,14 @@
 Integrations:
   AzurePipelines:
     Pipeline: azure-pipelines/basic/azure-pipelines.yml
+Functions:
+  TestAzurePipelines:
+    Role:
+      Statement:
+        - Action:
+            - "*"
+          Effect: Allow
+          Resource:
+            - "*"
+      Version: '2012-10-17'
+

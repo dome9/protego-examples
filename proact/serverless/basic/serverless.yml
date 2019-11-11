@@ -18,6 +18,7 @@ custom:
       Enabled: false
     proact:
       Enabled: true
+      StoreJobReport: true
 
 functions:
   pythonInput:

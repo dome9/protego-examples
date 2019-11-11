@@ -6,5 +6,5 @@ MY_SECRET_KEY = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 def lambda_handler(event, context):
     sqs = boto3.client('sqs')
     sqs.send_message("message args")
-
+    sqs.create_queue(QueueName="MyQueue")
     return True

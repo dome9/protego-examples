@@ -15,3 +15,4 @@ build
 .serverless
 protego-config.json
 .DS_Store
+*protego_fau_handler.js*
