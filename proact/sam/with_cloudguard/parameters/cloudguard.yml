@@ -1,6 +1,6 @@
 Integrations:
   Sam:
-    Template: sam/with_protego/parameters/template.yaml
+    Template: sam/with_cloudguard/parameters/template.yaml
     Parameters:
       TableNameParameter: MyTable
       FunctionNameParameter: MyFunc

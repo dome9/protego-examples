@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "devDependencies": {
-    "serverless-protego-plugin": "https://artifactory.app.protego.io/protego-serverless-plugin.tgz"
+    "serverless-cloudguard-plugin": "https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz"
   }
 }

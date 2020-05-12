@@ -1,7 +1,7 @@
 {
   "Metadata":{
-    "Protego": {
-      "Global": {
+    "Cloudguard": {
+      "Globals": {
         "DefaultFailThreshold": "Low"
       },
       "Functions": {

@@ -1,6 +1,6 @@
 Integrations:
   Sam:
-    Template: sam/with_protego/layers/template.yaml
+    Template: sam/with_cloudguard/layers/template.yaml
     Parameters:
       ProjName: myproj
       Env: myenv

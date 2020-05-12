@@ -1,8 +1,8 @@
-## Protego.yml template
+## Cloudguard.yml template
 
 # Account Level information This Information can be also supplied as command line arguments.
 Account:
-  # (boolean) an Indications to the tool whether to store the job results. The stored results can be viewed in the protego ui.
+  # (boolean) (NotImplemented) an Indications to the tool whether to store the job results. The stored results can be viewed in the cloudguard ui.
   StoreJobReport:  <true/false>
   # (dictionary) keys and values that will be attached to the job results. can store information on the build environment.
   Tags:
@@ -21,9 +21,9 @@ Globals:
   # Medium:   Will fail the build only if Medium (or above) issues are observed.
   # Low:      Will fail the build only if Low (or above) issues are observed.
   DefaultFailThreshold: None
-  # (boolean) (Default: false) Indicates Protego PermissiveRole feature if we want to check the current function role or to generate a suggested role for the function.
-  # false: Protego will check the current function role and alert if the role has redundant permissions. (in that mode the function have the current Role configuration)
-  # true: Protego will generate a suggested role for the function
+  # (boolean) (Default: false) Indicates Cloudguard PermissiveRole feature if we want to check the current function role or to generate a suggested role for the function.
+  # false: Cloudguard will check the current function role and alert if the role has redundant permissions. (in that mode the function have the current Role configuration)
+  # true: Cloudguard will generate a suggested role for the function
   ProtegoGeneratedRole: true
 
   # The scanner features block, contains feature level configuration.
@@ -40,7 +40,7 @@ Globals:
     CredentialsUsage:
       Enabled: true
       FailThreshold: None
-    # This feature will scan the function dependencies and lookup protego vulnerability DB for any known vulnerable dependency.
+    # This feature will scan the function dependencies and lookup cloudguard vulnerability DB for any known vulnerable dependency.
     VulnerableDependency:
       Enabled: true
       FailThreshold: None
@@ -83,7 +83,7 @@ Functions:
     # 2: the function configuration overrides for the Global section.
 
     # (String) The function friendly name.
-    # will be the name you will see in protego reports (locally and remote)
+    # will be the name you will see in cloudguard reports (locally and remote)
     FriendlyName: myFunctionFriendlyName
 
     # (String) The runtime environment for the Lambda function. (python2.7, nodejs8.10, java8 ...)

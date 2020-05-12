@@ -10,10 +10,10 @@ provider:
   versionFunctions: false
 
 plugins:
-- serverless-protego-plugin
+- serverless-cloudguard-plugin
 
 custom:
-  protego:
+  cloudguard:
     fsp:
       Enabled: false
     proact:

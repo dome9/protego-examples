@@ -10,9 +10,11 @@
 *.vscode
 *backup*
 protego_output
+cloudguard_output
 dist/
 build
 .serverless
 protego-config.json
+cloudguard-config.json
 .DS_Store
 *protego_fau_handler.js*

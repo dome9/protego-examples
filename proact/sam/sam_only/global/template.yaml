@@ -46,7 +46,7 @@ Resources:
 Transform: AWS::Serverless-2016-10-31
 
 Metadata:
-  Protego:
+  Cloudguard:
     Account:
       Tags:
         BuildEnv: SamOnlyGlobalExample

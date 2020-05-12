@@ -1,6 +1,6 @@
 Account:
   Tags:
-    BuildEnv: protegoCloudformationExamles
+    BuildEnv: cloudguardCloudformationExamles
 
 Integrations:
   Cloudformation:

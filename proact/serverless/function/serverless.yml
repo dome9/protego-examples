@@ -10,10 +10,10 @@ provider:
   versionFunctions: false
 
 plugins:
-- serverless-protego-plugin
+- serverless-cloudguard-plugin
 
 custom:
-  protego:
+  cloudguard:
     fsp:
       Enabled: false
     proact:
@@ -28,7 +28,7 @@ functions:
       - ../../inputs/node_s3_create_bucket/**
     role: MyRole
     # overrides the global configurations - skip the PermissiveRole feature
-    protego:
+    cloudguard:
       proact:
         Features:
           PermissiveRole:
@@ -41,7 +41,7 @@ functions:
       include:
         - ../../inputs/python_sqs_with_creds/**
     # overrides the global configurations - this function will be skipped
-    protego:
+    cloudguard:
       proact:
         Enabled: false
 

@@ -1,6 +1,6 @@
 Account:
   Tags:
-    BuildEnv: protegoExample
+    BuildEnv: cloudguardExample
 
 # this configuration will be applied to all the functions
 Globals:
@@ -10,7 +10,7 @@ Globals:
 
 Functions:
   nodeInput:
-    Runtime: nodejs6.10
+    Runtime: nodejs10.x
     Handler: index.handler
     CodeLocation: ../../inputs/node_s3_create_bucket
 

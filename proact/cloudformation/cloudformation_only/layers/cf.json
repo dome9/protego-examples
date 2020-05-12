@@ -2,7 +2,7 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Metadata": {
-    "Protego" : {
+    "Cloudguard" : {
       "Functions": {
         "NewCustomerLambdaFunction": {
           "CodeLocation": "../../../inputs/python_zip/newCustomer.zip"
