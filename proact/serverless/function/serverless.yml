@@ -30,6 +30,7 @@ functions:
     # overrides the global configurations - skip the PermissiveRole feature
     cloudguard:
       proact:
+        Enabled: true
         Features:
           PermissiveRole:
             Enabled: false

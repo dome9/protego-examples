@@ -93,7 +93,8 @@ Functions:
     # (String) the relative path to the functions code.
     # Can be a directory or a zip file
     # Must be located in the file system tree that is below the current working directory
-    CodeLocation: inputs/python_s3_create_bucket
+    # Relative to the file it is written in.
+    CodeLocation: ../../inputs/python_s3_create_bucket
     # (List) A list of event source mappings source ARNs.
     EventSourceMappings:
       # The Amazon Resource Name (ARN) of the event source.

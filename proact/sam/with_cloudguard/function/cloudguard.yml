@@ -1,6 +1,6 @@
 Integrations:
   Sam:
-    Template: sam/with_cloudguard/function/template.yaml
+    Template: ./template.yaml
 
 Functions:
   PutFunction:

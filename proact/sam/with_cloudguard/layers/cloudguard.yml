@@ -1,12 +1,12 @@
 Integrations:
   Sam:
-    Template: sam/with_cloudguard/layers/template.yaml
+    Template: template.yaml
     Parameters:
       ProjName: myproj
       Env: myenv
 
 Layers:
   myNodeLayer:
-    CodeLocation: inputs/myNodeLayer
+    CodeLocation: ../../../inputs/myNodeLayer
   AnotherNodeLayer:
-    CodeLocation: inputs/myNodeLayer
+    CodeLocation: ../../../inputs/myNodeLayer

@@ -27,7 +27,7 @@ Outputs:
 Resources:
   HelloWorldFunction:
     Properties:
-      CodeUri: inputs/HelloWorldFunction
+      CodeUri: ../../../inputs/HelloWorldFunction
       Events:
         HelloWorld:
           Properties:
@@ -39,7 +39,7 @@ Resources:
     Type: AWS::Serverless::Function
   AnotherHelloWorldFunction:
     Properties:
-      CodeUri: inputs/HelloWorldFunction
+      CodeUri: ../../../inputs/HelloWorldFunction
       Handler: app.lambdaHandler
       Runtime: nodejs8.10
     Type: AWS::Serverless::Function

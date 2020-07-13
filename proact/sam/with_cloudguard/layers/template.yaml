@@ -18,7 +18,7 @@ Resources:
     Properties:
       Runtime: nodejs8.10
       Handler: index.handler
-      CodeUri: inputs/node-agent-with-layer
+      CodeUri: ../../../inputs/node-agent-with-layer
       Role: !GetAtt MyRole.Arn
       Layers:
         - arn:aws:lambda:us-west-2:111111111111:layer:myNodeLayer:1

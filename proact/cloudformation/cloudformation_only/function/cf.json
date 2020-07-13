@@ -6,7 +6,7 @@
       },
       "Functions": {
         "PythonLambdaFunction": {
-          "CodeLocation": "inputs/python_new_file_handler"
+          "CodeLocation": "../../../inputs/python_new_file_handler"
         }
       }
     }

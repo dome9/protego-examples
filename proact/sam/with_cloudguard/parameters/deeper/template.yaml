@@ -15,7 +15,7 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs6.10
-      CodeUri: inputs/kinesis-analytics
+      CodeUri: ../../../../inputs/kinesis-analytics
       Description: >-
         An Amazon Kinesis Analytics record pre-processor that receives
         compressed (GZIP or Deflate compressed) JSON or CSV records as input and

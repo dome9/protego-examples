@@ -1,13 +1,13 @@
 Integrations:
   AzurePipelines:
-    Pipeline: azure-pipelines/function/azure-pipelines.yml
+    Pipeline: ./azure-pipelines.yml
 Functions:
   TestAzurePipelines:
     Handler: index.handler
-    CodeLocation: inputs/node_s3_create_bucket
+    CodeLocation: ../../inputs/node_s3_create_bucket
     ProtegoGeneratedRole: true
   pythonInput:
     Runtime : python2.7
     Handler: handler.lambda_handler
-    CodeLocation: inputs/python_sqs_send
+    CodeLocation: ../../inputs/python_sqs_send
     ProtegoGeneratedRole: true

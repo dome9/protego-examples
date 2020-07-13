@@ -1,6 +1,6 @@
 Integrations:
   AzurePipelines:
-    Pipeline: azure-pipelines/basic/azure-pipelines.yml
+    Pipeline: ./azure-pipelines.yml
 Functions:
   TestAzurePipelines:
     Role:
