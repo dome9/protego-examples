@@ -25,7 +25,7 @@ custom:
 
 functions:
   pythonInput:
-    runtime: python2.7
+    runtime: python3.7
     handler: inputs.python_sqs_with_creds.handler.lambda_handler
     package:
       include:

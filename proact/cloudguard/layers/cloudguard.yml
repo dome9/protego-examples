@@ -1,6 +1,6 @@
 Functions:
   nodeWithLayers:
-    Runtime : nodejs8.10
+    Runtime : nodejs12.x
     Handler: index.handler
     CodeLocation: ../../inputs/node-agent-with-layer
     Role:

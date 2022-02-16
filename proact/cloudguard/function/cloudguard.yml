@@ -1,6 +1,6 @@
 Functions:
   nodeInput:
-    Runtime: nodejs10.x
+    Runtime: nodejs12.x
     Handler: index.handler
     CodeLocation: ../../inputs/node_s3_create_bucket
     Role:

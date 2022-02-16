@@ -86,8 +86,8 @@ Functions:
     # will be the name you will see in cloudguard reports (locally and remote)
     FriendlyName: myFunctionFriendlyName
 
-    # (String) The runtime environment for the Lambda function. (python2.7, nodejs8.10, java8 ...)
-    Runtime : python2.7
+    # (String) The runtime environment for the Lambda function. (python3.7, nodejs12.x, java8 ...)
+    Runtime : python3.7
     # (String) The handler file.function that is called to begin executing your function.
     Handler: handler.lambda_handler
     # (String) the relative path to the functions code.

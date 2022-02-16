@@ -7,7 +7,7 @@ Resources:
     Properties:
       CodeUri: ../../../inputs/alexa_skill
       Handler: index.handler
-      Runtime: nodejs6.10
+      Runtime: nodejs12.x
       Events:
         AlexaSkillEvent:
           Type: AlexaSkill

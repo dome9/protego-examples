@@ -16,7 +16,7 @@ Parameters:
 Resources:
   HelloWorldFunction:
     Properties:
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Handler: index.handler
       CodeUri: ../../../inputs/node-agent-with-layer
       Role: !GetAtt MyRole.Arn
@@ -35,8 +35,7 @@ Resources:
 
 #          ContentUri: inputs/anotherNodeLayer
           CompatibleRuntimes:
-            - nodejs6.10
-            - nodejs8.10
+            - nodejs12.x
           LicenseInfo: 'MIT'
           RetentionPolicy: Retain
 

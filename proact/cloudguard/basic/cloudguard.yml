@@ -1,6 +1,6 @@
 Functions:
   pythonInput:
-    Runtime : python2.7
+    Runtime : python3.7
     Handler: python_new_file_handler.lambda_handler
     CodeLocation: ../../inputs/python_new_file_handler
     ProtegoGeneratedRole: true

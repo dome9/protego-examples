@@ -10,12 +10,12 @@ Globals:
 
 Functions:
   nodeInput:
-    Runtime: nodejs10.x
+    Runtime: nodejs12.x
     Handler: index.handler
     CodeLocation: ../../inputs/node_s3_create_bucket
 
   pythonInput:
-    Runtime : python2.7
+    Runtime : python3.7
     Handler: handler.lambda_handler
     CodeLocation: ../../inputs/python_sqs_send
 

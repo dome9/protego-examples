@@ -29,7 +29,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python2.7",
+        "Runtime": "python3.7",
         "Timeout": 6,
         "Description": "handle new customer event."
       },

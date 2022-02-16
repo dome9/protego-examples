@@ -35,13 +35,13 @@ Resources:
             Path: /hello
           Type: Api
       Handler: app.lambdaHandler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
     Type: AWS::Serverless::Function
   AnotherHelloWorldFunction:
     Properties:
       CodeUri: ../../../inputs/HelloWorldFunction
       Handler: app.lambdaHandler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
     Type: AWS::Serverless::Function
 Transform: AWS::Serverless-2016-10-31
 
